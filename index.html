@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Screensaver from DVD-Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <style>
-      html,
-      body {
+      * {
         margin: 0;
         padding: 0;
+      }
+      html,
+      body {
+        font-family: 'Roboto', sans-serif;
         background: #000;
       }
       #parent {
@@ -28,12 +32,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
-        font-weight: bold;
+        flex-direction: column;
         border-radius: 50%;
+        text-transform: uppercase;
         transform: translate3d(0,0,0);
       }
 
+      #child p  {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      #child span {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
       .red {
         background: red;
       }
@@ -67,7 +81,8 @@
     </style>
     <div id="parent">
       <div id="child">
-        DVD
+        <p>DVD</p>
+        <span>video</span>
       </div>
     </div>
     <script src="app.js"></script>
