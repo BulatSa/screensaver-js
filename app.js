@@ -1,10 +1,11 @@
-const child = document.querySelector(".child");
-const parent = document.querySelector(".parent");
+const child = document.querySelector("#child");
+const parent = document.querySelector("#parent");
 const step = 5;
 const maxWidth = parent.clientWidth;
 const maxHeight = parent.clientHeight;
 let directionHorizontal = "left";
 let directionVertical = "down";
+const arrColor = ['red', 'green', 'blue', 'yellow', 'grey', 'lightblue', 'purple', 'aquamarine', 'indigo', 'wheat'];
 
 //console.log(maxWidth, maxHeight);
 
@@ -47,7 +48,11 @@ function checkOutBorderHeight(elem, maxHeight) {
 }
 
 function checkDirection() {
+  let colorClass = arrColor[Math.floor(Math.random() * arrColor.length)];
+  
   if (checkOutBorderWidth(child, maxWidth)) {
+    child.className = '';
+    child.classList.add(colorClass);
     if (directionHorizontal == "left") {
       directionHorizontal = "right";
     } else {
@@ -55,6 +60,8 @@ function checkDirection() {
     }
   }
   if (checkOutBorderHeight(child, maxHeight)) {
+    child.className = '';
+    child.classList.add(colorClass);
     if (directionVertical == "top") {
       directionVertical = "down";
     } else {
